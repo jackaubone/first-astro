@@ -1,5 +1,7 @@
 ---
+import '../styles/global.css';
 
+const pageTitle = "AstroBlog";
 ---
 
 <html lang="en">
@@ -9,24 +11,27 @@
 		<link rel="icon" href="/first-astro/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		
-        <a href={import.meta.env.BASE_URL + "/index"} >Home</a>
+        <a href={import.meta.env.BASE_URL + ""} >Home</a>
         <a href={import.meta.env.BASE_URL + "/about/"} >About</a>
         <a href={import.meta.env.BASE_URL + "/blog/"} >Blog</a>
 
-		<h1>Astroworld Blog!!!11!</h1>
+		<h1>{pageTitle}</h1>
 
-		<p>Welcome to the freaking blog. Can't I write in markdown?? Whats with all this html dawg?
+		<p>Welcome to the freaking blog. Can't I write in markdown?? Whats with all this html? <br>
+           Turns out those are in separate .md files. This is all still html.
         </p>
 
-        yoooo. I can write in markdown!!!
-        #sup
-        its not doing page breaks though... </br>
-        I can't remember other markdown commands. *How about italics?* Nope.. </br>
-        **Double italics?** Nope.
+        <h2>My Astro Learning Blog</h2>
+        <p>This is where I will post about my journey learning Astro.</p>
+        <ul>
+            <li><a href={import.meta.env.BASE_URL + "/posts/post-1/"}>Post 1</a></li>
+	        <li><a href= {import.meta.env.BASE_URL + "/posts/post-2/"}>Post 2</a></li>
+    	    <li><a href={import.meta.env.BASE_URL + "/posts/post-3/"}>Post 3</a></li>		
+        </ul>
 
 	</body>
 </html>
