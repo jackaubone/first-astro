@@ -1,26 +1,9 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 const pageTitle = "AstroBlog";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/first-astro/favicon.svg" />
-		<link rel="icon" href="/first-astro/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		
-        <Header />
-
-
-		<h1>{pageTitle}</h1>
+<BaseLayout pageTitle={pageTitle}>
 
 		<p>Welcome to the freaking blog. Can't I write in markdown?? Whats with all this html? <br>
            Turns out those are in separate .md files. This is all still html.
@@ -33,7 +16,4 @@ const pageTitle = "AstroBlog";
 	        <li><a href= {import.meta.env.BASE_URL + "/posts/post-2/"}>Post 2</a></li>
     	    <li><a href={import.meta.env.BASE_URL + "/posts/post-3/"}>Post 3</a></li>		
         </ul>
-
-		<Footer />
-	</body>
-</html>
+</BaseLayout>
